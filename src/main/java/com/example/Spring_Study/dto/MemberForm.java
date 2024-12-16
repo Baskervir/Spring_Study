@@ -1,5 +1,7 @@
 package com.example.Spring_Study.dto;
 
+import com.example.Spring_Study.entity.Member;
+
 public class MemberForm {
     private String email;
     private String password;
@@ -9,5 +11,15 @@ public class MemberForm {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + "\'" +
+                ", password='" + password + "\'" +
+                '}';
+    }
 
+    public Member toEntity() {
+        return new Member(null, email, password);
+    }
 }
