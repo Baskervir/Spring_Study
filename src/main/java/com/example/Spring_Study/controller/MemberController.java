@@ -23,15 +23,12 @@ public class MemberController {
     @PostMapping("/join")
     public String join(MemberForm memberForm) {
         log.info(memberForm.toString());
-//        System.out.println(memberForm.toString());
 
         Member member = memberForm.toEntity();
         log.info(member.toString());
-//        System.out.println(member.toString());
 
         Member saved = memberRepository.save(member);
         log.info(saved.toString());
-//        System.out.println(saved.toString());
         return "";
     }
 }
